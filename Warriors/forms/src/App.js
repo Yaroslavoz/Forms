@@ -3,7 +3,7 @@ import './styles/index.css'
 
 
 
-const App =React.memo(() => {
+const App =() => {
   let usermail = useRef(null);
   let userPassword = useRef(null);
   let userPasswordConfirmation = useRef(null);
@@ -12,16 +12,20 @@ const App =React.memo(() => {
   // const [userPassword, setPassword] = useState('')
   // const [userPasswordConfirmation, setPasswordConfirmation] = useState('')
   
+  console.log(userEmail);  
+
   
   const onChangeValue = event => {
     event.preventDefault();
+    
     setEmail({
       userEmail : event.target.value
+      
      })
      
-    
+      
   }
-  console.log(userEmail);
+  // console.log(userEmail);
   
   const onSubmit = () => {
   //    setEmail({
@@ -74,6 +78,6 @@ const App =React.memo(() => {
     </div>
   </div>
   );
-})
+}
 
 export default App;
