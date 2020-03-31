@@ -4,34 +4,37 @@ import './styles/index.css'
 
 
 const App =() => {
-  let usermail = useRef(null);
-  let userPassword = useRef(null);
-  let userPasswordConfirmation = useRef(null);
+  let usermail = useRef(null)
+  
+  let userpassword = useRef(null)
+  let userpasswordConfirmation = useRef(null)
 
    const [userEmail, setEmail] = useState('')
-  // const [userPassword, setPassword] = useState('')
-  // const [userPasswordConfirmation, setPasswordConfirmation] = useState('')
-  
-  console.log(userEmail);  
+   const [userPassword, setPassword] = useState('')
+   const [userPasswordConfirmation, setPasswordConfirmation] = useState('')
+   
+  console.log(userEmail);
+  console.log(userPassword);
+  console.log(userPasswordConfirmation);
 
   
+
   const onChangeValue = event => {
     event.preventDefault();
-    
-    setEmail({
-      userEmail : event.target.value
-      
-     })
-     
-      
   }
-  // console.log(userEmail);
+  
   
   const onSubmit = () => {
-  //    setEmail({
-  //      userEmail : usermail.current.value
-  //     })
-  console.log(userPassword.current.value)
+    setEmail({
+      userEmail : usermail.current.value
+    });
+    setPassword({
+      userPassword : userpassword.current.value
+    });
+    setPasswordConfirmation({
+      userPasswordConfirmation : userpasswordConfirmation.current.value
+    })
+  //console.log(userPassword.current.value)
     // console.log(userPasswordConfirmation.current.value)
   }
   //console.log(usermail)
@@ -57,7 +60,7 @@ const App =() => {
         <div  className="px-4 pb-4">
           <label htmlFor="password" className="text-sm block font-bold pb-2">PASSWORD</label>
           <input type="password" name="password" id="" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300" placeholder="Enter your password"
-          ref={userPassword}
+          ref={userpassword}
           //value = {userPassword}
           />
         </div>
@@ -65,7 +68,7 @@ const App =() => {
         <div  className="px-4 pb-4">
           <label htmlFor="password" className="text-sm block font-bold pb-2">PASSWORD CONFIRMATION</label>
           <input type="password" name="passwordConfirm" id="" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300" placeholder="Confirm your password"
-          ref={userPasswordConfirmation}
+          ref={userpasswordConfirmation}
           //value = {userPasswordConfirmation}
           />
         </div>
